@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+
 class NumberCount extends StatefulWidget {
   const NumberCount({Key? key}) : super(key: key);
 
@@ -25,10 +26,11 @@ class _NumberCountState extends State<NumberCount> {
           },
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin/2),
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin / 2),
           child: Text(
-            numOfItems.toString().padLeft(2,"0"),
-            style: TextStyle(fontWeight: FontWeight.bold),),
+            numOfItems.toString().padLeft(2, "0"),
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
         buildOutlineButton(
             icon: Icons.add,
@@ -41,16 +43,13 @@ class _NumberCountState extends State<NumberCount> {
     );
   }
 
-  SizedBox buildOutlineButton({required IconData icon, required Function press}) {
+  SizedBox buildOutlineButton(
+      {required IconData icon, required Function press}) {
     return SizedBox(
       width: 40,
       height: 30,
-      child: OutlineButton(
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(13),
-        ),
-        onPressed: ()=>press(),
+      child: MaterialButton(
+        onPressed: () => press(),
         child: Icon(icon),
       ),
     );
