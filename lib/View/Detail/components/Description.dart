@@ -10,8 +10,6 @@ class description extends StatelessWidget {
   }) : super(key: key);
 
   final Cake cake;
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(
