@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:oder_food/Model/Cake.dart';
 
 import '../../../constants.dart';
-class Color_And_Size extends StatelessWidget {
+class Color_And_Size extends StatefulWidget {
   const Color_And_Size({
     Key? key,
     required this.cake,
   }) : super(key: key);
 
   final Cake cake;
-  
 
+  @override
+  State<Color_And_Size> createState() => _Color_And_SizeState();
+}
+
+class _Color_And_SizeState extends State<Color_And_Size> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -35,7 +39,7 @@ class Color_And_Size extends StatelessWidget {
           child: Column(
             children: [
               Text("Size: "),
-              Text("${cake.size} cm",
+              Text("${widget.cake.size} cm",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
             ],
           ),
